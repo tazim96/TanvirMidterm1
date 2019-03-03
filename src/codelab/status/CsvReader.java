@@ -63,6 +63,19 @@ public class CsvReader {
             }
         }
 
+        int totalStudents = roster.size();
+        System.out.println("Total number of students : "+totalStudents);
+
+        int totalExcerciseSolved=0;
+        for (Trainee trainee: roster) {
+            totalExcerciseSolved=totalExcerciseSolved+trainee.getNumberOfExercisesSolved();
+        }
+        System.out.println("Total number of excercises solved by entire class : "+totalExcerciseSolved);
+        double averageScore=totalExcerciseSolved/totalStudents;
+        System.out.println("Average Score of Class : "+averageScore);
+
+
+
     }
 
 }

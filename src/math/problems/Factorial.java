@@ -12,10 +12,10 @@ public class Factorial {
          *
          */
         int factorial1 = factRecursion(5);
-        System.out.println("Recursion: Factorial of 5 is: " + factorial1);
+        System.out.println("(Recursion)Factorial of 5 is: " + factorial1);
 
         int factorial2=5;
-        System.out.println("Iteration: Factorial of "+factorial2+" is : "+factIteration(factorial2));
+        System.out.println("(Iteration)Factorial of 5 is: "+factIteration(factorial2));
     }
 
     //Recursion
