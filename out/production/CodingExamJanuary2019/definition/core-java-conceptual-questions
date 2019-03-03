@@ -1,50 +1,108 @@
 Please answer the below core-java Questions:
 
 What is programing language?
-A.
-
-
-
+A.A programming language is a formal language, which comprises a set of instructions used to produce various kinds of output. They implement specific algorithms.
 
 What jdk contains or composed of and define each components?
-A.
-
-
-
-
+A. Java Runtime Environment (JRE), an interpreter/loader (Java), a compiler (javac), an archiver (jar), a documentation generator (Javadoc) and other tools needed in Java development.
 
 What is IDE?
-A.
+A. Integrated Development Environment. It is a software application that provides comprehensive facilities to computer programmers for software development.
+
 What are the IDEs available in the market to support java?
+A. Intillej, Eclipse, NetBeans, BlueJ.
+
 Explain the entire java life cycle.
+A. IDE (Intellij) -> Source Code -> Java Compile Byte Codes (.class)-> JVM ->Operating System
+
 what is class?
+A.A class is a user defined blueprint or prototype from which objects are created
+
 What is object?
+A. An entity that has state and behavior
+
 What is the entry point of an application?
+A. Main-Class: classname public static void main(String[] args).
+
 Why main is static?
+A. because keyword static allows main to be called without creating an object of the class in which the main method is defined.
+
 Which class is the superclass of all classes?
+A.java.lang.Object
+
 What is difference between path and classpath variables?
+A.Path is used by the operating system to find the executables and Classpath is used by the Java compiler to find the path, of classes.ie in J2EE we give the path of jar files.
+
 What is the difference between an Interface and Abstract class?
+A.Interface is absolutely abstract and cannot be instantiated; A Java abstract class also cannot be instantiated, but can be invoked if a main() exists.
+
 Can you make an Object from an Interface and Abstract class ? if not how do you use it ?
+A. No. Instantiate one of their subclasses/implementers.
+
 what is Access Specifier?
+A. Regulate access to classes, fields and methods in Java
+
 What is OOP ? Define each feature of java OOP.
+A. Object-oriented programming is a programming paradigm based on the concept of "objects", which can contain data, in the form of fields, and code, in the form of procedures.
+Abstraction- process of hiding the implementation details from the user.
+Encapsulation-  mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit.
+Inheritance- mechanism wherein a new class is derived from an existing class.
+Polymorphsism- the ability of an object to take on many forms.
+
 What is Java Package and which package is imported by default?
+A. organizes Java classes into namespaces, providing a unique namespace for each type it contains. java.lang.*
+
 What is API? Name list of API that you have used so far.
+A. Application programming interface.
+
 Does java support multiple inheritance, explain why or why not?
+A. No. To avoid ambiguity error.
+
 What is method overloading and when it happens?
+A. Its a feature that allows a class to have more than one method having the same name, if their argument lists are different. During compile time.
+
 Explain exceptions in java and how to handle it.
+A. Events that occur during the execution of programs that disrupt the normal flow of instructions. Use try, catch, and throw.
+
 What is static keyword in java? How it has been used in variables and methods ?
+A. It is used for share the same variable or method of a given class.
+
 What is final and how it has been used variables and methods?
+A.  To define an entity that can only be assigned once.
+
 What is final, finally and finalize?
+A. Final is used to apply restrictions on class, method and variable. Finally is used to place important code, it will be executed whether exception is handled or not. Finalize is used to perform clean up processing just before object is garbage collected.
+
 What is a constructor ?
+A. block of code similar to a method that's called when an instance of an object is created.
+
 Can we have multiple constructors in a class?
+A. Yes
+
 If we don't have a constructor declared, what is called during the object creation?
+A.
+
 What is "this" keyword in java ?
+A. Reference variable in Java that refers to the current object
+
 What is "super" keyword in java? How many possible way can you use?
+A. reference variable that is used to refer parent class objects. Variables, Methods, Constructors.
+
 What is JVM stand for ?
+A. Java Virtual Machine.
+
 Is JVM platform independent?
+A. No.
+
 What version of java are you using?
+A. Java SE 8
+
 What is JAR stand for ?
+A. Java ARchive
+
 What is the difference between JDK and JVM?
+A. Java Virtual Machine, the JVM actually runs Java bytecode while  Java Developer Kit, the JDK is what you need to compile Java source code.
+
 What is the difference between JVM and JRE?
 What is compile time and run time?
 What is heap?
@@ -61,6 +119,7 @@ Why is String Immutable in Java?
 What is constructor chaining in Java?
 The difference between Serial and Parallel Garbage Collector?
 What is JIT stands for?
+A. Just in time
 Explain Java Heap space and Garbage collection?
 Can you guarantee the garbage collection process?
 What is the difference between stack and heap in Java?
