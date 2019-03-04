@@ -15,7 +15,7 @@ public class UseArrayList {
 		 */
 		int limit = 10;
 		ArrayList<Integer> alist1=new ArrayList<Integer>();
-		
+
 		Random random = new Random();
 		for(int i=0; i<limit; i++){
 			alist1.add(random.nextInt(100));

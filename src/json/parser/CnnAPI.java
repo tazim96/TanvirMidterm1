@@ -1,5 +1,19 @@
 package json.parser;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class CnnAPI {
     /*
       You can get API_KEY from this below link. Once you have the API_KEY, you can fetch the top-headlines news.
@@ -37,4 +51,75 @@ public class CnnAPI {
 	   Store into choice of your database and retrieve.
 
      */
-}
+
+    public static void main(String[] args) throws Exception {
+
+
+        List<String> listofid = new ArrayList();
+        List<String> listofurl = new ArrayList();
+        List<String> listofname = new ArrayList();
+        List<String> listofauthor = new ArrayList();
+        List<String> listoftitle = new ArrayList();
+        List<String> listofdes = new ArrayList();
+        Map<String, List<String>> map = new HashMap<>();
+
+        try {
+            URL sUrl = new URL("https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=0d9e35dfa3c140aab8bf9cdd70df957f");
+            URLConnection request = sUrl.openConnection();
+            request.connect();
+
+            JsonParser jsonParser = new JsonParser();
+            JsonElement root = jsonParser.parse(new InputStreamReader((InputStream) request.getContent()));
+
+            JsonObject jsonObject = new JsonObject();
+            jsonObject.add("articles", root);
+
+            JsonArray jsonArray = new JsonArray();
+            jsonArray.add(root.getAsJsonObject().get("articles"));
+            for (int k = 0; k < jsonArray.get(0).getAsJsonArray().size(); k++) {
+
+
+                JsonObject jsonobject = jsonArray.get(0).getAsJsonArray().get(k).getAsJsonObject();
+
+
+                String id = jsonobject.get("source").getAsJsonObject().get("id").toString();
+                System.out.print(id);
+                listofid.add(id);
+
+                String url = jsonobject.get("url").toString();
+                System.out.print(url);
+                listofurl.add(url);
+
+                String name = jsonobject.get("source").getAsJsonObject().get("name").toString();
+                System.out.print(name);
+                listofname.add(name);
+
+                String author = jsonobject.get("author").toString();
+                System.out.print(author);
+                listofauthor.add(author);
+
+                String title = jsonobject.get("title").toString();
+                System.out.print(title);
+                listoftitle.add(title);
+
+                String des = jsonobject.get("description").toString();
+                System.out.print(des);
+                listofdes.add(des);
+
+                System.out.println();
+                map.put("all_id", listofid);
+                map.put("all_url", listofurl);
+                map.put("all_name", listofname);
+                map.put("all_author", listofauthor);
+                map.put("all_title", listoftitle);
+                map.put("all_description", listofdes);
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        for (Map.Entry e : map.entrySet()) {
+            System.out.println(e.getKey() + " " + e.getValue());
+        }
+    }}
