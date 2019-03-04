@@ -104,7 +104,10 @@ What is the difference between JDK and JVM?
 A. Java Virtual Machine, the JVM actually runs Java bytecode while  Java Developer Kit, the JDK is what you need to compile Java source code.
 
 What is the difference between JVM and JRE?
+A. JRE is the environment within which the virtual machine runs. JRE is the container, JVM is the content. Java Runtime Environment contains JVM
+
 What is compile time and run time?
+A.Compile time is source code must be compiled into machine code in order to become and executable program and run time is when an application is running
 What is heap?
 How java manage it's memory?
 What is the difference between String, StringBuffer and StringBuilder?
