@@ -216,4 +216,13 @@ public class ConnectToSqlDB {
             System.out.println(user.getStName() + " " + user.getStID()+ " " + user.getStDOB());
         }
     }
+
+    public void createTableFromStringToMySql(String tbl_map, String mapKey, String mapValue) {
+    }
+
+    public void InsertDataFromArrayListToMySql(List<String> list1, String tbl_map, String mapKey, String mapValue) {
+    }
+
+
+
 }

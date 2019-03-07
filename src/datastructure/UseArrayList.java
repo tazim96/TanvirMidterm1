@@ -34,18 +34,15 @@ public class UseArrayList {
 
 		System.out.println("Re-retrieving elements from ArrayList: " + alist1);
 
-		//Sorting ArrayList
 		Collections.sort(alist1);
 		System.out.println("Sorting ArrayList :"+alist1);
 
-		//Retrieve with for loop
 		System.out.println("Retrieve with for loop");
 		for (int i = 0; i < alist1.size(); i++) {
 			System.out.print(alist1.get(i)+" , ");
 		}
 		System.out.println();
 
-		//Retrieve with while loop and iterator
 		System.out.println("Retrieve with while loop and iterator");
 		Iterator it = alist1.listIterator();
 		while(it.hasNext()){
@@ -62,10 +59,9 @@ public class UseArrayList {
 		ArrayList alist2= new ArrayList();
 		alist2=alist1;
 
-		//Connect to MySql Database
+
 		ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 
-		//Create table, Insert and Read data from database
 		connectToSqlDB.insertDataFromArrayListToSqlTable(alist2,"tbl_arrayList", "column_lowestNumber");
 		List<String> numbers = connectToSqlDB.readDataBase("tbl_arrayList", "column_lowestNumber");
 		for(String st:numbers){
@@ -73,6 +69,6 @@ public class UseArrayList {
 		}
 
 	}
-}
 
+}
 

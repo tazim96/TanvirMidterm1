@@ -4,37 +4,78 @@ why do we need data structure?
 A.  Its a particular way of organizing and storing data in a computer so that it can be accessed and modified efficiently.
 
 What are the various operations that can be performed on different Data Structures?
-Inserting, Deleting, Sorting, Merging
+A .Inserting, Deleting, Sorting, Merging
 
 List out the areas in which data structures are applied extensively?
 
-what is an Array?
+What is an Array?
+A. Dynamically-created object that serves as a container to hold constant number of values of the same type
 
 what is the difference between the Array and ArrayList?
+A.Array is a fixed length data structure while ArrayList is a variable length
+
 what is LinkedList?
+A.linear data structures where the elements are not stored in contiguous locations and every element is a separate object with a data part and address part.
+
 How is an Array different from Linked List?
+A.array is an index based data structure, every element is associated with an index whereas the linked list is a data structure that uses references, each node is referred to another node
+
 what is queue?
+A.used to hold the elements about to be processed and provides various operations like the insertion, removal etc.
+
 what is stack?
+A. a Last In First Out (LIFO) data structure. It supports two basic operations called push and pop
 
 what is FIFO and LIFO?
 First In, First Out. Last In, Last Out.
 
 what is the order of complexity?
+A.
+
 what is the best case to search an element from an array?
+A.
+
 what is the worst case to search an element from an array?
+A.
+
 what is tree in data structure?
+A. Trees are well-known as a non-linear data structure
+
 what is graph in data structure?
+A.a non-linear data structure consisting of nodes and edges
+
 what is the difference between the HashTable and HashMap?
+A.
+
 What are the major data structures used in the following areas : RDBMS, Network data model and Hierarchical data model.
+A.
+
 How HashMap works in java?
+A.works on the principle of hashing, put(key, value) and get(key) method for storing and retrieving Objects from HashMap.
+
 What is ArrayIndexOutOfBoundsException in java? When it occurs?
+A.
+
 What are the different ways of copying an array into another array?
+A.Manually, Arrays.copyOf(),System.arraycopy(),Object.clone()
+
 What is difference between an array and a linked list?
+A. Array is a consistent set of a fixed number of data items and Linked List is an ordered set comprising a variable number of data items.
+
 What is DFS and BFS?
+A. Depth First Traversals and Breadth First Traversal
+
 What is Recursion?
+A.  is a basic programming technique you can use in Java, in which a method calls itself to solve some problem
+
 What are linear and non linear data Structures?
+A.
+
 What is Big-(O)-notation?
+A.to describe the performance or complexity of an algorithm.
+
 Outlined different kind of sorting algorithm with time complexity?
+A.Insertion sort, Selection sort, Merge sort, Heapsort, Quicksort, Shellsort, Bubble sort
 
 Draw a table with time complexity in which it will summarize all the data structure feature's advantages and disadvantages.
   a)In terms of Accessing element.
