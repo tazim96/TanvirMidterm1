@@ -19,10 +19,11 @@ public class CollectionView {
                 map.put(5, "San Jose");
                 map.put(6, "Seattle");
 
+                System.out.println("Collection view of map : ");
+
                 for(Map.Entry<Integer,String> colView: map.entrySet()){
                         System.out.println(colView);
                 }
-
 
         }
 

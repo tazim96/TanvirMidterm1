@@ -29,57 +29,49 @@ public class DataReader {
 
 		FileReader fr = null;
 		BufferedReader br = null;
-		String line;
+		String string = "";
+		String data = "";
 		String saveLine = "";
-		String path = "C:\\Users\\Manju\\Desktop\\self-driving-car.txt";
+		textFile = "C:\\Users\\Manju\\Desktop\\self-driving-car.txt";
 		try {
 
-			fr = new FileReader(path);
+
+			fr = new FileReader(textFile);
 			br = new BufferedReader(fr);
+
+			while ((string = br.readLine()) != null) {
+				data = data + string;
+				System.out.println(string);
+			}
 
 
 		} catch (FileNotFoundException e) {
+			e.getStackTrace();
+		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		try {
 
-			while ((line = br.readLine()) != null) {
-
-				System.out.println(line);
-				saveLine += line;
-
-			}
-		} catch (IOException e1) {
-			e1.printStackTrace();
 		} finally {
 			if (fr != null) {
-
 				fr = null;
 			}
 			if (br != null) {
-
 				br = null;
 			}
+
 		}
 
 
+		String[] array = data.split(" ");
+		List<String> list = new LinkedList<String>();
+		Stack<String> myStack = new Stack<String>();
 
-		String[] saveArray = saveLine.split(" ");
-
-		Stack<String> myStack = new Stack<>();
-		List<String> myList = new ArrayList<>();
-
-		for(String element : saveArray){
-
+		for (String element : array) {
+			list.add(element);
 			myStack.push(element);
-			myList.add(element);
-
 		}
-
-;
 
 		System.out.println("Stack:");
-		while(!myStack.isEmpty()){
+		while (!myStack.isEmpty()) {
 			System.out.println(myStack.pop() + "  ");
 		}
 
@@ -91,23 +83,17 @@ public class DataReader {
 
 
 		System.out.println("LinkedList:");
-		Iterator itr1 = myList.iterator();
+		Iterator itr1 = list.iterator();
 
-		while(itr1.hasNext()){
+		while (itr1.hasNext()) {
 
 			System.out.println(itr1.next());
+
 
 		}
 
 
+	}}
 
 
 
-
-
-
-	}
-
-
-
-}

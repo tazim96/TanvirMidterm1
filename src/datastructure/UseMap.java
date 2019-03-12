@@ -21,8 +21,6 @@ public class UseMap {
         Map<String, List<String>> map = new HashMap<String, List<String>>();
 
 
-
-
         List<String> cityOfUSA = new ArrayList<String>();
         cityOfUSA.add("New York");
         cityOfUSA.add("Los Angeles");
@@ -38,7 +36,6 @@ public class UseMap {
         cityOfCanada.add("Vancouver");
         cityOfCanada.add("Montreal");
 
-        //put it into map
 
         Map<String, List<String>> b = new HashMap<String, List<String>>();
         b.put("United States", cityOfUSA);
@@ -46,20 +43,19 @@ public class UseMap {
         b.put("Canada", cityOfCanada);
 
 
-        //While loop and iterator
-        System.out.println("Retrieve with while loop and iterator: ");
+        //Retrieve with while loop and iterator
+        System.out.println("Retrieve with while loop and iterator");
         Iterator<Map.Entry<String, List<String>>> it = b.entrySet().iterator();
         while (it.hasNext()) {
-            Map.Entry<String, List<String>> i = it.next();
-            System.out.println(i.getKey() + " " + i.getValue());
+            Map.Entry<String, List<String>> x = it.next();
+            System.out.println(x.getKey() + " " + x.getValue());
         }
 
-        //For each Loop
-        System.out.println("Retrieve with For each Loop: ");
+        //Retrieve with For each Loop
+        System.out.println("Retrieve with For each Loop");
         for (Map.Entry entry : b.entrySet()) {
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
-
 
     }
 

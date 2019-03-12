@@ -2,6 +2,7 @@ package datastructure;
 
 import databases.ConnectToSqlDB;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -16,38 +17,40 @@ public class UseArrayList {
 		 * Store all the sorted data into one of the databases.
 		 *
 		 */
-		List<Integer> list = new ArrayList<Integer>();
+		List<Integer> num = new ArrayList<Integer>();
+		num.add(77);
+		num.add(23);
+		num.add(14);
+		num.add(10);
+		num.add(50);
+		num.add(13);
+		num.add(90);
+		num.add(33);
 
-		list.add(23);
-		list.add(24);
-		list.add(47);
-		list.add(25);
-		list.add(73);
-		list.add(38);
-		list.add(90);
-		list.add(29);
 
-		System.out.print(list);
+
+		System.out.print(num);
 		System.out.println();
 
-		list.remove(5);
 
-		System.out.println(list);
-		System.out.println();
+		num.remove(2);
+		num.remove(5);
 
-		Iterator<Integer> itr = list.iterator();
+		System.out.println(num);
+
+		int peek = num.get(0);
+		System.out.println("The peek is : " + peek);
+
+
+		Iterator<Integer> itr = num.iterator();
 
 		while(itr.hasNext()){
-			System.out.println("value= " + itr.next());
+			System.out.println("num: " + itr.next());
 
 
 		}
 
 		System.out.println();
-		ConnectToSqlDB conn = new ConnectToSqlDB();
-		conn.insertIntFromArrayListToSqlTable(list, "ArrayList", "Values");
-
-
 
 	}
 
