@@ -2,73 +2,53 @@ package datastructure;
 
 import databases.ConnectToSqlDB;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 
 public class UseArrayList {
 
-	public static void main(String[] args)throws java.lang.Exception {
+	public static void main(String[] args) {
 		/*
 		 * Demonstrate how to use ArrayList that includes add,peek,remove,retrieve elements.
 		 * Use For Each loop and while loop with Iterator to retrieve data.
 		 * Store all the sorted data into one of the databases.
-		 * 
+		 *
 		 */
-		int limit = 10;
-		ArrayList<Integer> alist1=new ArrayList<Integer>();
+		List<Integer> list = new ArrayList<Integer>();
 
-		Random random = new Random();
-		for(int i=0; i<limit; i++){
-			alist1.add(random.nextInt(100));
-		}
-		for(int j=0; j<alist1.size(); j++){
+		list.add(23);
+		list.add(24);
+		list.add(47);
+		list.add(25);
+		list.add(73);
+		list.add(38);
+		list.add(90);
+		list.add(29);
 
-			System.out.print(alist1.get(j)+" , ");
-		}
+		System.out.print(list);
 		System.out.println();
 
-		System.out.println("ArrayList size before remove :"+alist1.size());
+		list.remove(5);
 
-		alist1.remove(0);
-		alist1.remove(1);
-		System.out.println("ArrayList size after remove :"+alist1.size());
-
-		System.out.println("Re-retrieving elements from ArrayList: " + alist1);
-
-		Collections.sort(alist1);
-		System.out.println("Sorting ArrayList :"+alist1);
-
-		System.out.println("Retrieve with for loop");
-		for (int i = 0; i < alist1.size(); i++) {
-			System.out.print(alist1.get(i)+" , ");
-		}
+		System.out.println(list);
 		System.out.println();
 
-		System.out.println("Retrieve with while loop and iterator");
-		Iterator it = alist1.listIterator();
-		while(it.hasNext()){
-			System.out.print(it.next()+" , ");
+		Iterator<Integer> itr = list.iterator();
+
+		while(itr.hasNext()){
+			System.out.println("value= " + itr.next());
+
+
 		}
+
 		System.out.println();
-
-		//Retrieve with For each loop
-		System.out.println("Retrieve with For each loop");
-		for(Integer str:alist1)
-			System.out.print(str+" , ");
-		System.out.println();
-
-		ArrayList alist2= new ArrayList();
-		alist2=alist1;
+		ConnectToSqlDB conn = new ConnectToSqlDB();
+		conn.insertIntFromArrayListToSqlTable(list, "ArrayList", "Values");
 
 
-		ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
-
-		connectToSqlDB.insertDataFromArrayListToSqlTable(alist2,"tbl_arrayList", "column_lowestNumber");
-		List<String> numbers = connectToSqlDB.readDataBase("tbl_arrayList", "column_lowestNumber");
-		for(String st:numbers){
-			System.out.println(st);
-		}
 
 	}
 
 }
-
