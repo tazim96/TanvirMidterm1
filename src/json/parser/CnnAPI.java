@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import databases.ConnectToSqlDB;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -18,15 +19,11 @@ public class CnnAPI {
     /*
       You can get API_KEY from this below link. Once you have the API_KEY, you can fetch the top-headlines news.
       https://newsapi.org/s/cnn-api
-
       Fetch This following CNN API, It will return some news in Json data. Parse this data and construct
       https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=YOUR_API_KEY
-
       MY_API_KEY=0d9e35dfa3c140aab8bf9cdd70df957f
-
       After getting Json Format of the news, You can go to json validator link: https://jsonlint.com/ to see
       how it can be parsed.
-
       "articles": [{
 		"source": {
 			"id": "cnn",
@@ -40,28 +37,28 @@ public class CnnAPI {
 		"publishedAt": "2018-12-23T01:09:50.8583193Z",
 		"content": "Chat with us in Facebook Messenger. Find out what's happening in the world as it unfolds."
 	   },{}]
-
 	   Read the articles array and construct Headline news as source, author, title,description,url,urlToImage,publishedAt
 	   and content. You need to design News Data Model and construct headline news.
 	   You can store in Map and then into ArrayList as your choice of Data Structure.
-
 	   You can follow How we implemented in Employee and JsonReaderUtil task.
-
 	   Show output of all the headline news in to console.
 	   Store into choice of your database and retrieve.
-
      */
 
     public static void main(String[] args) throws Exception {
 
 
         List<String> listofid = new ArrayList();
-        List<String> listofurl = new ArrayList();
         List<String> listofname = new ArrayList();
-        List<String> listofauthor = new ArrayList();
-        List<String> listoftitle = new ArrayList();
+        List<String> listofa = new ArrayList();
+        List<String> listoft = new ArrayList();
         List<String> listofdes = new ArrayList();
+        List<String> listofurl = new ArrayList();
+        List<String> listofurlm = new ArrayList();
+        List<String> listofpub = new ArrayList();
+        List<String> listofcon = new ArrayList();
         Map<String, List<String>> map = new HashMap<>();
+
 
         try {
             URL sUrl = new URL("https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=0d9e35dfa3c140aab8bf9cdd70df957f");
@@ -76,6 +73,8 @@ public class CnnAPI {
 
             JsonArray jsonArray = new JsonArray();
             jsonArray.add(root.getAsJsonObject().get("articles"));
+
+
             for (int k = 0; k < jsonArray.get(0).getAsJsonArray().size(); k++) {
 
 
@@ -86,35 +85,45 @@ public class CnnAPI {
                 System.out.print(id);
                 listofid.add(id);
 
-                String url = jsonobject.get("url").toString();
-                System.out.print(url);
-                listofurl.add(url);
-
                 String name = jsonobject.get("source").getAsJsonObject().get("name").toString();
                 System.out.print(name);
                 listofname.add(name);
 
-                String author = jsonobject.get("author").toString();
-                System.out.print(author);
-                listofauthor.add(author);
-
-                String title = jsonobject.get("title").toString();
-                System.out.print(title);
-                listoftitle.add(title);
-
+                String a = jsonobject.get("author").toString();
+                System.out.print(a);
+                listofa.add(a);
+                String t = jsonobject.get("title").toString();
+                System.out.print(t);
+                listoft.add(t);
                 String des = jsonobject.get("description").toString();
                 System.out.print(des);
                 listofdes.add(des);
-
+                String url = jsonobject.get("url").toString();
+                System.out.print(url);
+                listofurl.add(url);
+                String urlm = jsonobject.get("urlToImage").toString();
+                System.out.print(urlm);
+                listofurlm.add(urlm);
+                String pub = jsonobject.get("publishedAt").toString();
+                System.out.print(pub);
+                listofpub.add(pub);
+                String con = jsonobject.get("content").toString();
+                System.out.print(con);
+                listofcon.add(con);
                 System.out.println();
                 map.put("all_id", listofid);
-                map.put("all_url", listofurl);
                 map.put("all_name", listofname);
-                map.put("all_author", listofauthor);
-                map.put("all_title", listoftitle);
+                map.put("all_author", listofa);
+                map.put("all_title", listoft);
                 map.put("all_description", listofdes);
+                map.put("all_url", listofurl);
+                map.put("all_urlImage", listofurlm);
+                map.put("all_publication", listofpub);
+                map.put("all_content", listofcon);
+
 
             }
+
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -122,4 +131,16 @@ public class CnnAPI {
         for (Map.Entry e : map.entrySet()) {
             System.out.println(e.getKey() + " " + e.getValue());
         }
-    }}
+        List l1 = listofid;
+        List l2 = listofname;
+        List l3 = listofa;
+        List l4 = listoft;
+        List l5 = listofdes;
+        List l6 = listofurl;
+        List l7 = listofurlm;
+        List l8 = listofpub;
+        List l9 = listofcon;
+
+
+    }
+}
