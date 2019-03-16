@@ -8,8 +8,8 @@ public class UnitTestSorting {
       This class is about Unit testing for Sorting Algorithm.
      */
     public static void main(String[] args) {
-        int [] unSortedArray = {6,9,2,5,1,0,4};
-        int [] sortedArray =   {0,1,2,4,5,6,9};
+        int [] unSortedArray = {2,5,3,6,7,8,1};
+        int [] sortedArray =   {1,2,3,5,6,7,8};
         //Create Sort object
         Sort sort = new Sort();
         //apply unsorted array to selectionSort.
@@ -25,7 +25,7 @@ public class UnitTestSorting {
         //Now implement Unit test for rest of the soring algorithm...................below
 
         //insertion sort
-        unSortedArray = new int[]{6, 9, 2, 5, 1, 0, 4};
+        unSortedArray = new int[]{2,5,3,6,7,8,1};
         sort.insertionSort(unSortedArray);
         try {
             Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
@@ -35,7 +35,7 @@ public class UnitTestSorting {
         System.out.println("Insertion Sort Pass");
 
         //bubble sort
-        unSortedArray = new int[]{6, 9, 2, 5, 1, 0, 4};
+        unSortedArray = new int[]{2,5,3,6,7,8,1};
         sort.bubbleSort(unSortedArray);
         try {
             Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
@@ -45,7 +45,7 @@ public class UnitTestSorting {
         System.out.println("Bubble Sort Pass");
 
         //merge sort
-        unSortedArray = new int[]{6,9,2,5,1,0,4};
+        unSortedArray = new int[]{2,5,3,6,7,8,1};
         sort.mergeSort(unSortedArray,0,unSortedArray.length-1);
         try {
             Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
@@ -55,7 +55,7 @@ public class UnitTestSorting {
         System.out.println("Merge Sort Pass");
 
         //quick sort
-        unSortedArray = new int[]{6,9,2,5,1,0,4};
+        unSortedArray = new int[]{2,5,3,6,7,8,1};
         sort.quickSort(unSortedArray,0,unSortedArray.length-1);
         try {
             Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
@@ -65,7 +65,7 @@ public class UnitTestSorting {
         System.out.println("Quick Sort Pass");
 
         //heap sort
-        unSortedArray = new int[]{6,9,2,5,1,0,4};
+        unSortedArray = new int[]{2,5,3,6,7,8,1};
         sort.heapSort(unSortedArray);
         try {
             Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
@@ -75,8 +75,8 @@ public class UnitTestSorting {
         System.out.println("Heap Sort Pass");
 
         //bucket sort
-        unSortedArray = new int[]{6, 9, 2, 5, 1, 0, 4};
-        sort.bucketSort(unSortedArray, 9);
+        unSortedArray = new int[]{2,5,3,6,7,8,1};
+        sort.bucketSort(unSortedArray, 8);
         try {
             Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
         } catch (Exception ex) {
@@ -85,7 +85,7 @@ public class UnitTestSorting {
         System.out.println("Bucket Sort Pass");
 
         //shell sort
-        unSortedArray = new int[]{6,9,2,5,1,0,4};
+        unSortedArray = new int[]{2,5,3,6,7,8,1};
         sort.shellSort(unSortedArray);
         try {
             Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
